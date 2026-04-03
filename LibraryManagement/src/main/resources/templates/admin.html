@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Library</title>
+    <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body>
+<div class="page-shell">
+    <div class="hero">
+        <div class="hero-copy">
+            <div class="eyebrow">Dashboard</div>
+            <h1>Admin</h1>
+            <p>Manage books and student accounts.</p>
+        </div>
+        <div class="toolbar-actions">
+            <span class="pill">Admin</span>
+            <button class="secondary" id="logoutBtn" type="button">Logout</button>
+        </div>
+    </div>
+
+    <div id="msg" class="message"></div>
+
+    <div class="panel-grid">
+        <div class="panel">
+            <div class="toolbar">
+                <h3>Books</h3>
+                <div class="toolbar-actions">
+                    <button class="secondary" type="button" id="refreshBooks">Refresh</button>
+                </div>
+            </div>
+
+            <form id="addBookForm">
+                <label>
+                    Title
+                    <input name="title" placeholder="Clean Code" required>
+                </label>
+                <label>
+                    Author
+                    <input name="author" placeholder="Robert C. Martin" required>
+                </label>
+                <label>
+                    Available Copies
+                    <input name="availableCopies" placeholder="5" type="number" min="0" required>
+                </label>
+                <div class="toolbar-actions">
+                    <button type="submit">Add Book</button>
+                </div>
+            </form>
+
+            <div class="table-scroll">
+                <table id="booksTable">
+                    <thead>
+                    <tr><th>ID</th><th>Title</th><th>Author</th><th>Copies</th><th>Action</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="toolbar">
+                <h3>Students</h3>
+                <div class="toolbar-actions">
+                    <button class="secondary" type="button" id="refreshUsers">Refresh</button>
+                </div>
+            </div>
+
+            <form id="addStudentForm">
+                <label>
+                    Name
+                    <input name="name" placeholder="Student Name" required>
+                </label>
+                <label>
+                    Email
+                    <input name="email" placeholder="student2@library.com" type="email" required>
+                </label>
+                <label>
+                    Password
+                    <input name="password" placeholder="password" type="password" required>
+                </label>
+                <div class="toolbar-actions">
+                    <button type="submit">Add Student</button>
+                </div>
+            </form>
+
+            <div class="table-scroll">
+                <table id="usersTable">
+                    <thead>
+                    <tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Action</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/app.js"></script>
+<script>
+  window.LibraryUI.initAdminPage();
+</script>
+</body>
+</html>

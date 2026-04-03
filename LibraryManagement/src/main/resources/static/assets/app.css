@@ -1,0 +1,245 @@
+ :root {
+     --bg: #f4efe6;
+     --card: rgba(255, 255, 255, 0.9);
+     --text: #1f2933;
+     --muted: #52606d;
+     --primary: #0b6e4f;
+     --primary-dark: #084c39;
+     --accent: #f4a261;
+     --danger: #c1121f;
+     --border: rgba(31, 41, 51, 0.12);
+     --shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+ }
+ 
+ * {
+     box-sizing: border-box;
+ }
+ 
+ body {
+     margin: 0;
+     font-family: Georgia, "Times New Roman", serif;
+     color: var(--text);
+     background:
+         radial-gradient(circle at top left, rgba(244, 162, 97, 0.25), transparent 28%),
+         radial-gradient(circle at bottom right, rgba(11, 110, 79, 0.2), transparent 30%),
+         linear-gradient(135deg, #f7f1e5 0%, #eef5ef 100%);
+     min-height: 100vh;
+ }
+ 
+ .page-shell {
+     max-width: 1180px;
+     margin: 0 auto;
+     padding: 32px 20px 48px;
+ }
+ 
+ .hero {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+     gap: 24px;
+     margin-bottom: 24px;
+ }
+ 
+ .hero h1,
+ .hero h2,
+ .hero h3,
+ .panel h3,
+ .panel h4 {
+     margin-top: 0;
+ }
+ 
+ .hero-copy {
+     max-width: 640px;
+ }
+ 
+ .eyebrow {
+     text-transform: uppercase;
+     letter-spacing: 0.16em;
+     font-size: 12px;
+     color: var(--primary);
+     font-weight: 700;
+ }
+ 
+ .hero h1 {
+     font-size: clamp(2rem, 4vw, 3.5rem);
+     margin-bottom: 12px;
+ }
+ 
+ .hero p,
+ .panel p,
+ label,
+ th,
+ td,
+ input,
+ select,
+ button {
+     font-family: "Trebuchet MS", Verdana, sans-serif;
+ }
+ 
+ .panel-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     gap: 18px;
+ }
+ 
+ .panel {
+     background: var(--card);
+     border: 1px solid var(--border);
+     border-radius: 24px;
+     padding: 22px;
+     box-shadow: var(--shadow);
+     backdrop-filter: blur(12px);
+ }
+ 
+ .panel.full-width {
+     grid-column: 1 / -1;
+ }
+ 
+ form {
+     display: grid;
+     gap: 12px;
+ }
+ 
+ label {
+     font-size: 14px;
+     color: var(--muted);
+     display: grid;
+     gap: 6px;
+ }
+ 
+ input,
+ select,
+ button {
+     border-radius: 14px;
+     border: 1px solid var(--border);
+     padding: 12px 14px;
+     font-size: 15px;
+ }
+ 
+ input,
+ select {
+     background: rgba(255, 255, 255, 0.92);
+ }
+ 
+ button {
+     border: none;
+     background: var(--primary);
+     color: white;
+     cursor: pointer;
+     font-weight: 700;
+     transition: transform 0.2s ease, background 0.2s ease;
+ }
+ 
+ button:hover {
+     transform: translateY(-1px);
+     background: var(--primary-dark);
+ }
+ 
+ button.secondary {
+     background: var(--accent);
+     color: #2d1e12;
+ }
+ 
+ button.danger {
+     background: var(--danger);
+ }
+ 
+ .message {
+     margin-bottom: 16px;
+     padding: 12px 14px;
+     border-radius: 14px;
+     display: none;
+     font-family: "Trebuchet MS", Verdana, sans-serif;
+ }
+ 
+ .message.success {
+     display: block;
+     background: rgba(11, 110, 79, 0.12);
+     color: var(--primary-dark);
+ }
+ 
+ .message.error {
+     display: block;
+     background: rgba(193, 18, 31, 0.12);
+     color: var(--danger);
+ }
+ 
+ .stats {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+     gap: 14px;
+ }
+ 
+ .stat {
+     padding: 16px;
+     border-radius: 18px;
+     background: rgba(11, 110, 79, 0.08);
+ }
+ 
+ .stat strong {
+     display: block;
+     font-size: 1.5rem;
+     margin-top: 8px;
+ }
+ 
+ table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-top: 10px;
+ }
+
+.table-scroll {
+    max-height: 330px;
+    overflow: auto;
+}
+ 
+ th,
+ td {
+     text-align: left;
+     padding: 12px 8px;
+     border-bottom: 1px solid rgba(82, 96, 109, 0.16);
+     font-size: 14px;
+ }
+ 
+ .toolbar {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     gap: 12px;
+     align-items: center;
+     margin-bottom: 16px;
+ }
+ 
+ .toolbar-actions {
+     display: flex;
+     gap: 12px;
+     flex-wrap: wrap;
+ }
+ 
+ .login-card {
+     max-width: 460px;
+     margin: 10vh auto 0;
+ }
+ 
+ .pill {
+     display: inline-block;
+     padding: 6px 12px;
+     border-radius: 999px;
+     background: rgba(244, 162, 97, 0.18);
+    color: rgba(124, 74, 31, 0.82);
+     font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+ }
+ 
+ @media (max-width: 768px) {
+     .page-shell {
+         padding: 20px 14px 36px;
+     }
+ 
+     .hero {
+         flex-direction: column;
+     }
+ }
+

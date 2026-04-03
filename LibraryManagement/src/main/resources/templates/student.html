@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student | Library</title>
+    <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body>
+<div class="page-shell">
+    <div class="hero">
+        <div class="hero-copy">
+            <div class="eyebrow">Dashboard</div>
+            <h1>Student</h1>
+            <p>Browse, borrow, return, and pay fines.</p>
+        </div>
+        <div class="toolbar-actions">
+            <span class="pill">Student</span>
+            <button class="secondary" id="logoutBtn" type="button">Logout</button>
+        </div>
+    </div>
+
+    <div id="msg" class="message"></div>
+
+    <div class="panel-grid">
+        <div class="panel">
+            <div class="toolbar">
+                <h3>Browse & Borrow</h3>
+                <div class="toolbar-actions">
+                    <button class="secondary" id="availableBtn" type="button">Available</button>
+                </div>
+            </div>
+
+            <div class="toolbar">
+                <label>
+                    Search (title/author)
+                    <input id="searchQuery" placeholder="e.g. Martin">
+                </label>
+                <div class="toolbar-actions">
+                    <button class="secondary" id="searchBtn" type="button">Search</button>
+                </div>
+            </div>
+
+            <table id="availableTable">
+                <thead>
+                <tr><th>ID</th><th>Title</th><th>Author</th><th>Copies</th><th>Action</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="panel">
+            <div class="toolbar">
+                <h3>My Transactions</h3>
+                <div class="toolbar-actions">
+                    <button class="secondary" id="refreshTx" type="button">Refresh</button>
+                </div>
+            </div>
+
+            <table id="txTable">
+                <thead>
+                <tr>
+                    <th>ID</th><th>Book</th><th>Issue</th><th>Due</th><th>Return</th><th>Fine</th><th>Paid</th><th>Action</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/app.js"></script>
+<script>
+  window.LibraryUI.initStudentPage();
+</script>
+</body>
+</html>

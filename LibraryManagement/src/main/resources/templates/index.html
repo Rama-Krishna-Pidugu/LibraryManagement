@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+    <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body>
+<div class="page-shell">
+    <div class="hero">
+        <div class="hero-copy">
+            <div class="eyebrow">Library management</div>
+            <h1>Backend is running</h1>
+            <p>Use the interactive UI to login and manage books, users, lending, returns, and fines.</p>
+        </div>
+        <div class="toolbar-actions">
+            <button onclick="window.location.href='/ui/login'">Open Login</button>
+        </div>
+    </div>
+
+    <div class="panel-grid">
+        <div class="panel full-width">
+            <h3>Default accounts</h3>
+            <p class="pill"><strong>Admin</strong>: <code>admin@library.com</code> / <code>admin123</code></p>
+            <p class="pill"><strong>Student</strong>: <code>student@library.com</code> / <code>student123</code></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
